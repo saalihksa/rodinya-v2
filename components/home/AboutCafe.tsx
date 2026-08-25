@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CoverImage } from "../ui/CoverImage";
 import { images } from "@/lib/images";
+import { paths } from "@/lib/paths";
 import { Reveal } from "../motion/Reveal";
 import { SectionTitle } from "../ui/SectionTitle";
 import { FramedPhoto } from "./FramedPhoto";
@@ -18,7 +19,7 @@ export function AboutCafe() {
           <p className="mt-4 max-w-lg text-[15px] leading-8 text-mink">
             Kafe 07:00 – 02:00 açık. Telefon: 0532 686 32 00. Instagram: @rodinyagalata.
           </p>
-          <Link href="/about" className="gold-btn mt-8 md:mt-10">
+          <Link href={paths.about} className="gold-btn mt-8 md:mt-10">
             Hakkımızda
           </Link>
         </Reveal>

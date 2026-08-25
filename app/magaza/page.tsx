@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useCart } from "@/lib/cart";
 import { products } from "@/lib/data";
 import { images } from "@/lib/images";
+import { paths } from "@/lib/paths";
 
 export default function ShopPage() {
   const { add } = useCart();
@@ -21,7 +22,7 @@ export default function ShopPage() {
         <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p) => (
             <article key={p.slug} className="group text-center">
-              <Link href={`/shop/${p.slug}`} className="relative block aspect-square overflow-hidden">
+              <Link href={paths.product(p.slug)} className="relative block aspect-square overflow-hidden">
                 <CoverImage src={p.image} alt={p.title} fill className="transition duration-500 group-hover:scale-105" />
                 <span className="absolute inset-x-4 bottom-4 opacity-100 sm:inset-x-8 sm:bottom-8 sm:opacity-0 sm:transition sm:group-hover:opacity-100">
                   <button
@@ -37,7 +38,7 @@ export default function ShopPage() {
                 </span>
               </Link>
               <h2 className="mt-5 font-[family-name:var(--font-display)] uppercase tracking-[0.14em]">
-                <Link href={`/shop/${p.slug}`}>{p.title}</Link>
+                <Link href={paths.product(p.slug)}>{p.title}</Link>
               </h2>
               <p className="mt-2 text-gold">₺{p.price}</p>
             </article>

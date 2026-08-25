@@ -1,5 +1,6 @@
 import { images } from "./images";
 import { siteContact } from "./contact";
+import { paths } from "./paths";
 
 export type NavChild = { label: string; href: string; children?: NavChild[] };
 
@@ -7,17 +8,17 @@ export const navItems: { label: string; href: string; children?: NavChild[] }[] 
   { label: "Ana Sayfa", href: "/" },
   {
     label: "Hakkımızda",
-    href: "/about",
+    href: paths.about,
     children: [
-      { label: "Hakkımızda", href: "/about" },
-      { label: "Hikâyemiz", href: "/chef" },
-      { label: "Mekân", href: "/kitchen" },
-      { label: "Galeri", href: "/gallery" },
+      { label: "Hakkımızda", href: paths.about },
+      { label: "Hikâyemiz", href: paths.story },
+      { label: "Mekân", href: paths.venue },
+      { label: "Galeri", href: paths.gallery },
     ],
   },
   { label: "Menü", href: siteContact.menuPath },
-  { label: "Blog", href: "/blog" },
-  { label: "İletişim", href: "/contact" },
+  { label: "Blog", href: paths.blog },
+  { label: "İletişim", href: paths.contact },
 ];
 
 export const choiceMenu = [

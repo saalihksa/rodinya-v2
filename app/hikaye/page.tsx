@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { images } from "@/lib/images";
+import { paths } from "@/lib/paths";
 
 export const metadata: Metadata = { title: "Hikâyemiz" };
 
@@ -22,7 +23,7 @@ export default function ChefPage() {
             <p className="mt-5 text-[15px] leading-8 text-mink">
               Kafe 07:00 – 02:00 açık. Telefon: 0532 686 32 00. Instagram: @rodinyagalata.
             </p>
-            <Link href="/kitchen" className="gold-btn mt-10">
+            <Link href={paths.venue} className="gold-btn mt-10">
               Mekânı gör
             </Link>
           </div>

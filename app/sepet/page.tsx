@@ -4,6 +4,7 @@ import { CoverImage } from "@/components/ui/CoverImage";
 import Link from "next/link";
 import { useCart } from "@/lib/cart";
 import { products } from "@/lib/data";
+import { paths } from "@/lib/paths";
 
 export default function CartPage() {
   const { lines, setQty, remove, total } = useCart();
@@ -48,7 +49,7 @@ export default function CartPage() {
             Toplam ₺{total}
           </p>
           <div className="flex justify-stretch sm:justify-end">
-            <Link href="/checkout" className="gold-btn w-full sm:w-auto">
+            <Link href={paths.checkout} className="gold-btn w-full sm:w-auto">
               Ödeme
             </Link>
           </div>

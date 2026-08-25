@@ -6,6 +6,7 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { testimonials } from "@/lib/data";
 import { images } from "@/lib/images";
+import { paths } from "@/lib/paths";
 import { Reveal } from "../motion/Reveal";
 import { SectionTitle } from "../ui/SectionTitle";
 
@@ -30,7 +31,7 @@ export function Testimonials() {
             </p>
           </Reveal>
           <Reveal delay={0.22}>
-            <Link href="/about" className="gold-btn mt-12">
+            <Link href={paths.about} className="gold-btn mt-12">
               Hakkımızda
             </Link>
           </Reveal>

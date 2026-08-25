@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/lib/data";
+import { paths } from "@/lib/paths";
 import { useCart } from "@/lib/cart";
 import { Logo } from "../ui/Logo";
 import { LanguageSwitch } from "./LanguageSwitch";
@@ -18,7 +19,12 @@ export function Header() {
       </div>
       <nav className="flex flex-1 flex-col items-center justify-center gap-8">
         {navItems.map((item) => {
-          const active = pathname === item.href || item.children?.some((c) => c.href === pathname);
+          const active =
+            item.href === "/"
+              ? pathname === "/"
+              : pathname === item.href ||
+                pathname.startsWith(`${item.href}/`) ||
+                item.children?.some((c) => pathname === c.href || pathname.startsWith(`${c.href}/`));
           return (
             <div key={item.label} className="dropdown-trigger relative">
               <Link
@@ -54,7 +60,7 @@ export function Header() {
       </nav>
       <div className="flex flex-col items-center gap-5 pb-2">
         <LanguageSwitch />
-        <Link href="/contact" className="gold-btn !min-w-0 !px-5">
+        <Link href={paths.contact} className="gold-btn !min-w-0 !px-5">
           <span className="gold-btn-x tl" aria-hidden />
           <span className="gold-btn-x tr" aria-hidden />
           <span className="gold-btn-x bl" aria-hidden />
@@ -63,7 +69,7 @@ export function Header() {
         </Link>
         {count > 0 ? (
           <Link
-            href="/cart"
+            href={paths.cart}
             className="font-[family-name:var(--font-nav)] text-[13px] font-semibold uppercase tracking-[0.14em] text-ink"
           >
             Sepet ({count})

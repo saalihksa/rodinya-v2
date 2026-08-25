@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { navItems } from "@/lib/data";
+import { paths } from "@/lib/paths";
 import { Logo } from "../ui/Logo";
 import { LanguageSwitch } from "./LanguageSwitch";
 
@@ -50,7 +51,12 @@ export function MobileHeader() {
           </div>
             <nav className="flex min-h-0 flex-1 flex-col items-center justify-center gap-6 py-6">
             {navItems.map((item) => {
-              const active = pathname === item.href || item.children?.some((c) => c.href === pathname);
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname === item.href ||
+                    pathname.startsWith(`${item.href}/`) ||
+                    item.children?.some((c) => pathname === c.href || pathname.startsWith(`${c.href}/`));
               return (
                 <div key={item.label} className="text-center">
                   <Link
@@ -81,7 +87,7 @@ export function MobileHeader() {
                 </div>
               );
             })}
-            <Link href="/contact" onClick={() => setOpen(false)} className="gold-btn mt-4 w-full max-w-xs">
+            <Link href={paths.contact} onClick={() => setOpen(false)} className="gold-btn mt-4 w-full max-w-xs">
               İletişim
             </Link>
             <div className="mt-6 border-t border-steel/30 pt-5">

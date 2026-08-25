@@ -5,6 +5,7 @@ import { ReviewsMarquee } from "@/components/home/ReviewsMarquee";
 import { PageHero } from "@/components/layout/PageHero";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { images } from "@/lib/images";
+import { paths } from "@/lib/paths";
 
 export const metadata: Metadata = { title: "Hakkımızda" };
 
@@ -23,7 +24,7 @@ export default function AboutPage() {
             <p className="mt-5 text-[15px] leading-8 text-mink">
               Kafe 07:00 – 02:00 açık. Telefon: 0532 686 32 00. Instagram: @rodinyagalata.
             </p>
-            <Link href="/contact" className="gold-btn mt-10">
+            <Link href={paths.contact} className="gold-btn mt-10">
               İletişim
             </Link>
           </div>

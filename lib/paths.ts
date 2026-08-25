@@ -1,0 +1,18 @@
+export const paths = {
+  home: "/",
+  about: "/hakkimizda",
+  story: "/hikaye",
+  venue: "/mekan",
+  gallery: "/galeri",
+  chefs: "/sefler",
+  menu: "/menu",
+  blog: "/yazilar",
+  post: (slug: string) => `/yazilar/${slug}` as const,
+  contact: "/iletisim",
+  shop: "/magaza",
+  product: (slug: string) => `/magaza/${slug}` as const,
+  cart: "/sepet",
+  checkout: "/odeme",
+  comingSoon: "/yakinda",
+  portfolio: "/portfolyo",
+} as const;
