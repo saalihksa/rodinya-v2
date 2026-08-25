@@ -117,15 +117,6 @@ export const chefs = [
   },
 ];
 
-export const products = [
-  { slug: "antep-sebastian", title: "Antep fıstıklı Sebastian", price: 280, image: images.products[0], cat: "tatlı" },
-  { slug: "osco", title: "Osco", price: 260, image: images.products[1], cat: "tatlı" },
-  { slug: "profiterol", title: "Rodinya Profiterol", price: 240, image: images.products[2], cat: "tatlı" },
-  { slug: "brunch", title: "Brunch tabağı", price: 390, image: images.products[3], cat: "kahvaltı" },
-  { slug: "kahve", title: "Filtre kahve", price: 95, image: images.products[4], cat: "içecek" },
-  { slug: "limonata", title: "Limonata", price: 95, image: images.products[5], cat: "içecek" },
-];
-
 export const posts = [
   {
     slug: "galata-kahvalti",

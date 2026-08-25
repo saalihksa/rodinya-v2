@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { CartProvider } from "@/lib/cart";
 import { BackToTop } from "./BackToTop";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
@@ -16,7 +15,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   }, [pathname]);
 
   return (
-    <CartProvider>
+    <>
       <MobileHeader />
       <Header />
       <div className="flex min-h-screen max-w-full flex-col overflow-x-clip xl:pl-[280px]">
@@ -24,6 +23,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <Footer />
       </div>
       <BackToTop />
-    </CartProvider>
+    </>
   );
 }

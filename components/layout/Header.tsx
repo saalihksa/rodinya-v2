@@ -4,13 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/lib/data";
 import { paths } from "@/lib/paths";
-import { useCart } from "@/lib/cart";
 import { Logo } from "../ui/Logo";
 import { LanguageSwitch } from "./LanguageSwitch";
 
 export function Header() {
   const pathname = usePathname();
-  const { count } = useCart();
 
   return (
     <aside className="header-vertical fixed left-0 top-0 z-40 hidden h-screen w-[280px] flex-col bg-navy px-8 py-12 xl:flex">
@@ -67,14 +65,6 @@ export function Header() {
           <span className="gold-btn-x br" aria-hidden />
           İletişim
         </Link>
-        {count > 0 ? (
-          <Link
-            href={paths.cart}
-            className="font-[family-name:var(--font-nav)] text-[13px] font-semibold uppercase tracking-[0.14em] text-ink"
-          >
-            Sepet ({count})
-          </Link>
-        ) : null}
       </div>
     </aside>
   );
