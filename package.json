@@ -9,15 +9,24 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "framer-motion": "^13.1.1",
+    "imagesloaded": "^5.0.0",
+    "isotope-layout": "^3.0.6",
     "next": "16.3.2",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "react-select": "^5.10.2",
+    "swiper": "^14.1.0",
+    "yet-another-react-lightbox": "^3.32.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/imagesloaded": "^4.1.7",
+    "@types/isotope-layout": "^3.0.15",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-select": "^5.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
     "tailwindcss": "^4",
